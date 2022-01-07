@@ -5,7 +5,6 @@
     <div class="pb-5">
       <img src="images/abroad-abroad-study.jpg" width="100" class="pull-right rounded-circle pb-3" alt="tt">
     </div>
-      
   </div>
   <br>
 </section>
@@ -24,7 +23,7 @@
 ?>
 <section class="container-fluid pt-4">
   <div class="container pb-5">
-      <h3 class="text-center text-success mb-4"><?php echo $row['scholarship']; ?><small class="text-danger" style="font-size:15px;cursor: pointer;">(Scholarship Description)</small><span class="text-muted pull-right" id="bookmark"><i class="fa fa-bookmark" aria-hidden="true"></i></span></h3>
+      <h3 class="text-center text-success mb-4"><?php echo $row['scholarship']; ?><small class="text-danger" style="font-size:15px;cursor: pointer;">(Scholarship Description)</small><span class="text-muted pull-right"><button type="button" id="bookmark" data-ss="<?php echo $row['scholarship_id']; ?>"><i class="fa fa-bookmark" aria-hidden="true"></i></button></span></h3>
       <div class="row ">
         <div class="col-md-8">
           <h6 class="text-primary"><?php echo $row['scholarship']; ?></h6>
@@ -46,7 +45,7 @@
             <h6><span class="text-success">Program</span>:<span class="text-muted"><?php echo $row['program']; ?></span></h6>
             <h6><span class="text-success">Amount</span>:<span class="text-muted"><?php echo $row['benefit'] ?></span></h6>
             <h6><span class="text-success">Deadline Date</span>:<span class="text-muted">  <?php echo $row['deadline']; ?></span></h6>
-            <button class="btn btn-success">Apply Now</button>
+            <a target="_blank" href="<?php echo $row['link']; ?>" class="btn btn-success">Apply Now</a>
           </div>
         </div>
       </div>
@@ -56,9 +55,23 @@
  <?php include 'inc/footer.php'; ?>
 <script type="text/javascript">
   $(document).ready(function(){
+    
+
+    // Bookmarks
     $('#bookmark').click(function(){
-      alert('Added successfull in your bookmarklist');
-      $(this).removeClass("text-muted").addClass("text-primary");
+      var getid = $(this).data("ss")
+      $.ajax({
+        url:"ajax/bookmark.php",
+        method:"POST",
+        data:{txt:getid},
+        success:function(data)
+        {
+          if(data == 1){
+            alert("Added successfull in your bookmarklist")
+          }
+        }
+      }); 
     });
+
  })
  </script>

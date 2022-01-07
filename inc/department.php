@@ -6,24 +6,26 @@
 ?>
 <?php 
     if ($gettValueByDept) {
+      $i = 0;
       while($result = mysqli_fetch_array($gettValueByDept)){
-       
+       $i++;
+       //print_r($result);
 ?>
   <div class="row border border-danger p-1 mt-2">
       <div class="col-md-3">
-        <h5 class="uniPos">#3</h5>
+        <h5 class="uniPos">#<?php echo $i; ?></h5>
         <div class="p-4">
-          <img src="images/bro.jpg" width="150" alt="img">
+          <img src="admin/upload/<?php echo $result['uni_image']; ?>" width="150" alt="img">
         </div>
           
       </div>
       <div class="col-md-8 mb-2">
         <h2 class="text-dark"><b><?php echo $result['uni_name'] ?></b></h2>
-        <h3 class="text-muted">Location:Wellington, UK</h3>
-        <h4 class="text-muted">Bachelors: GBP 16230 </h4>
-        <h5 class="text-muted">Entry Criteria: IELTS , </h5>
-        <h5 class="text-muted">Masters: GBP 18620 </h5>
-        <button class="btn btn-primary">view</button>
+        <h3 class="text-muted">Location: <?php echo $result['location']; ?></h3>
+        <h4 class="text-muted">Bachelors: <?php echo $result['bchelors']; ?> </h4>
+        <h5 class="text-muted">Entry Criteria: <?php echo $result['entry_criteria']; ?></h5>
+        <h5 class="text-muted">Masters: <?php echo $result['masters']; ?></h5>
+        <a href="<?php echo $result['link']; ?>" class="btn btn-primary">view</a >
 
       </div>
   </div>

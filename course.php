@@ -1,5 +1,12 @@
  <?php include 'inc/header.php'; ?>
+<?php 
 
+$login = Session::get('login');
+  if (!$login) {
+    header("Location: login.php");
+  }
+
+?>
 <?php 
   if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     $getValueByMajor = $uni->getValueByMajor();

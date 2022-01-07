@@ -205,14 +205,14 @@ class University
 	}
 
 	function allCourse(){
-		$sql ='SELECT uni.uni_name FROM university uni
+		$sql ='SELECT DISTINCT uni.uni_name, uni.location, uni.uni_image,uni.entry_criteria,uni.masters,uni.bchelors,uni.link FROM university uni
 		 JOIN course cr ON (uni.uni_id = cr.university_id) 
-		 JOIN department dept ON (dept.dept_id = cr.dept)';
+		 JOIN department dept ON (dept.dept_id = cr.dept);';
 		$fetchAll = $this->db->select($sql);
 		return $fetchAll;
 	}
 	function gettValueByDept($id){
-		$sql ='SELECT uni.uni_name FROM university uni
+		$sql ='SELECT DISTINCT uni.uni_name, uni.location, uni.uni_image,uni.entry_criteria,uni.masters,uni.bchelors,uni.link FROM university uni
 		 JOIN course cr ON (uni.uni_id = cr.university_id) 
 		 JOIN department dept ON (dept.dept_id = cr.dept)
 		 WHERE cr.dept = "'.$id.'"';
@@ -224,7 +224,7 @@ class University
 		$coursename = $this->fm->validation($coursename);
 		$coursename = mysqli_real_escape_string($this->db->link,$coursename);
 		$coursename = strtolower($coursename);
-		$sql ='SELECT uni.uni_name FROM university uni
+		$sql ='SELECT DISTINCT uni.uni_name, uni.location, uni.uni_image,uni.entry_criteria,uni.masters,uni.bchelors FROM university uni
 		 JOIN course cr ON (uni.uni_id = cr.university_id) 
 		 JOIN department dept ON (dept.dept_id = cr.dept)
 		 WHERE cr.major = "'.$coursename.'"';

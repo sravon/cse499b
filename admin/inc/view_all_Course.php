@@ -31,7 +31,7 @@ if ($allUni) {
  if ($viewCourse ) {
    	while($row1 = mysqli_fetch_array($viewCourse )){?>
    							<tr>
-				       			<td><?php echo $row1['course_name']; ?></td>
+				       			<td><?php echo $row1['major']; ?></td>
 				       			<td><?php echo $row1['Duration']; ?></td>
 				       			<td><a href="details.php?name=country&id=<?php echo $row1['course_id']; ?>" class="btn btn-primary">View</a></td>
 				       			<td><a href="university.php?name=edit_course&id=<?php echo $row1['course_id']; ?>" class="btn btn-primary">Edit</a></td>

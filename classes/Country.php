@@ -17,6 +17,18 @@ class Country
 		$fetchAll = $this->db->select($sql);
 		return $fetchAll;
 	}
+
+	function addCountry($data){
+		$country = $this->fm->validation($data['country']);
+		$country = mysqli_real_escape_string($this->db->link,$country);
+		$sql ="INSERT INTO `country`(`title`) VALUES ('".$country."')";
+	
+		$insert = $this->db->insert($sql);
+		if ($insert) {
+			$msg = 'Added success';
+		}
+		return $msg;
+	}
 	function insertValueContry($data){
 		$title = $this->fm->validation($data['title']);
 		$title = mysqli_real_escape_string($this->db->link,$title);

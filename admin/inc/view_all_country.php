@@ -2,9 +2,49 @@
 
 <div class="row">
 	<h1 class="text-center text-danger">View All Elements</h1>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addcountry">
+		Click Here to Add Country
+	</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="addcountry" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h3 class="modal-title text-center text-success" id="exampleModalLabel">Add university</h3>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+<?php
+	if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
+		$insertValueUniversity = $cntry->addCountry($_POST);
+		echo '<script type="text/javascript">alert("'.$insertValueUniversity.'")</script>';
+	}
+?>	
+		
+				<form method="post" >
+				  	<div class="modal-body">
+				  		<div class="row">
+						    <div class="col-md-6">
+						      <label>Country Name </label>
+						    </div>
+						    <div class="col-md-6">
+						      <input type="text" name="country" class="form-control" placeholder="University name">
+						    </div>
+						</div>
+						 <button type="submit" class="btn btn-primary" name="save">SAVE</button>
+				  	</div>
+				</form>
+		    </div>
+		  </div>
+		</div>
+
+	 <!-- start element -->
 	<div class="col-md-12">
 		<div class="row">
-
+			<!-- Button trigger modal -->
+		
 <?php 
 $allCountry = $cntry->allCountry();
 if ($allCountry) {

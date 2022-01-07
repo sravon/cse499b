@@ -13,8 +13,21 @@
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/swiper.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style type="text/css">
+      .header{
+        height: 100vh;background:url(images/effect.jpg);background-size: cover;
+        position: relative;overflow: hidden;
+      }
+      .header:after{
+        content: "";
+        position: absolute;bottom: 0;left: 0;width: 100%;
+        background-image: url(https://uradi.me/assets/index/svg/wave-static-02.svg);
+        background-repeat: no-repeat;
+        height: 200px;
+      }
+    </style>
 </head>
-<body style="background: #cccc"> 
+<body class="header" > 
 <section class="container-fluid mt-5 mb-3">
   <div class="container">
     <div class="row">
@@ -53,6 +66,7 @@
           <div class="form-group row">
             <div class="col-sm-10">
               <button type="submit" class="btn btn-primary" name="login">Sign in</button>
+              <a href="registration.php" class="text-light ml-3">Don't have an account? Click here</a>
             </div>
           </div>
         </form>

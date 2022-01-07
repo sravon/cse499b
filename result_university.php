@@ -1,4 +1,4 @@
-
+<?php include 'inc/header.php'; ?>
 <?php 
 $connect = mysqli_connect("localhost","root","","client");
 
@@ -44,55 +44,6 @@ $connect = mysqli_connect("localhost","root","","client");
 
  
  ?>
- <!DOCTYPE html>
-<html>
-<head>
-  <title>cse499 Project</title>
-  <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
-</head>
-<body>
-<header id="Mainnavbar" class="sticky-top">
-  <div class="logo">
-    <a href="index.php"><img src="images/footer.png" class="rounded-circle" width="100"></a>
-  </div>
-  <nav class="activation">
-    <ul class="mainUl">
-      <li><a href="index.php">Home</a></li>
-      <li class="sub-menu"><a href="country.php">Country</a>
-        <ul>
-        	<li><a href="country_details.phpname=nai">candana</a></li>
-        	<li><a href="country_details.phpname=nai">candana</a></li>
-        </ul>
-      </li>
-      <li class="sub-menu"><a href="exam.php">exam</a>
-        <ul>
-          	<li><a href="country_details.phpname=nai">candana</a></li>
-        	<li><a href="country_details.phpname=nai">candana</a></li>
-        </ul>
-      </li>
-      <li ><a href="university.php">University</a> </li>
-      <li class="sub-menu"><a href="course.php">Course</a>
-        <ul>
-       		<li><a href="country_details.phpname=nai">candana</a></li>
-        	<li><a href="country_details.phpname=nai">candana</a></li>
-        </ul>
-      </li>
-      <li ><a href="forum.php">Login</a> </li>
-      <li ><a href="forum.php">SignUP</a> </li>
-      <li ><a href="articles.php">Articles</a> </li>
-      <li><a href="contact_us.php">Contact us</a></li>
-    </ul>
-  </nav>
-  <div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
-</header>
-
-
 
 <section class="container-fluid mt-2">
 	<div class="row">
@@ -100,20 +51,7 @@ $connect = mysqli_connect("localhost","root","","client");
 		<div class="col-md-8 p-5">
 			<h3 class="text-center p-2 text-light bg-success">Result Of Your Eligibility For <?php echo $university; ?></h3>
 			
-			<div class="row p-2 border border-secondary mb-2">
-				<div class="col-md-4">
-					<label for="inputPassword" class=" col-form-label"><b>Your Cgpa Score:</b></label>
-				  <label for="inputPassword" class=" col-form-label"><b>3.44</b></label>
-				</div>
-				<div class="col-md-4">
-					<label for="inputPassword" class=" col-form-label"><b>Required Cgpa :</b></label>
-				  <label for="inputPassword" class=" col-form-label"><b>3.44</b></label>
-				</div>
-			  	<div class="col-md-4">
-					<label for="inputPassword" class="col-form-label"><b>Status :</b></label>
-				  <label for="inputPassword" class=" col-form-label text-success"><b>Passed</b></label>
-				</div>
-			</div>
+			
 			<?php echo $output; ?>
 		</div>
 		<div class="col-md-2"></div>

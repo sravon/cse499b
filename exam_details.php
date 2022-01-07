@@ -1,4 +1,12 @@
 <?php include 'inc/header.php'; ?>
+<?php 
+
+$login = Session::get('login');
+  if (!$login) {
+    header("Location: login.php");
+  }
+
+?>
 <?php
 if (isset($_GET['name'])) {
   $title = $_GET['name'];
@@ -63,79 +71,7 @@ if ($selectValueExam) {
     <?php echo $tab_content; ?>
   </div>
 </section>
-<section class="container-fluid mt-1">
-  <div class="container ">
-    <h1 class="text-center text-secondary p-3">What we offer</h1>
-    <div class="row">
-      <div class="col-md-4">
-        <img src="images/bro.jpg" alt="" class="img-fluid mx-auto d-block rounded-circle" >
-        <div class="mt-3" style="box-sizing: content-box;">
-          <h3 class="text-primary">In-Class Training</h3>
-          <p class="text-design text-muted">This program is well suited for individuals who have not scored well in the diagnostic exam or are looking to score above a 325.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <img src="images/bro.jpg" alt="" class="img-fluid mx-auto d-block rounded-circle" >
-        <div class="mt-3" style="box-sizing: content-box;">
-          <h3 class="text-primary">One On One Coaching</h3>
-          <p class="text-design text-muted">This program is well suited for individuals who have not scored well in the diagnostic exam or are looking to score above a 325.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <img src="images/bro.jpg" alt="" class="img-fluid mx-auto d-block rounded-circle" >
-        <div class="mt-3" style="box-sizing: content-box;">
-          <h3 class="text-primary">Test Series & Doubt Solving</h3>
-          <p class="text-design text-muted">This program is well suited for individuals who have not scored well in the diagnostic exam or are looking to score above a 325.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <hr>
-</section>
-<section class="container-fluid mt-5">
-  <div class="container">
-    <h1 class="p-3 text-center text-success">What Our Students Say</h1><hr>
-    <div class="row">
-      <div class="col-md-4">
-        <p class="text-design text-muted">Simple yet analytical approaches for problem-solving, explained by the faculty, was greatly helpful for solving difficult questions. The innovative teaching adopted by the faculty make the test much easier.</p>
-        <div class="row">
-          <div class="col-md-6">
-            <img src="images/bro.jpg" alt="" width="100" class="img-fluid mx-auto d-block rounded-circle" >
-          </div>
-          <div class="col-md-6">
-            <h5 class=""><b>mr rinko</b></h5>
-            <p class="text-design text-muted">Simple yet analyticalr.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <p class="text-design text-muted">Simple yet analytical approaches for problem-solving, explained by the faculty, was greatly helpful for solving difficult questions. The innovative teaching adopted by the faculty make the test much easier.</p>
-        <div class="row">
-          <div class="col-md-6">
-            <img src="images/bro.jpg" alt="" width="100" class="img-fluid mx-auto d-block rounded-circle" >
-          </div>
-          <div class="col-md-6">
-            <h5 class=""><b>mr rinko</b></h5>
-            <p class="text-design text-muted">Simple yet analyticalr.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <p class="text-design text-muted">Simple yet analytical approaches for problem-solving, explained by the faculty, was greatly helpful for solving difficult questions. The innovative teaching adopted by the faculty make the test much easier.</p>
-        <div class="row">
-          <div class="col-md-6">
-            <img src="images/bro.jpg" alt="" width="100" class="img-fluid mx-auto d-block rounded-circle" >
-          </div>
-          <div class="col-md-6">
-            <h5 class=""><b>mr rinko</b></h5>
-            <p class="text-design text-muted">Simple yet analyticalr.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-      
-  </div>
-</section>
+
 <footer class="footer text-center text-light container-fluid bg-dark">
   <div class="container">
       <div class="row">

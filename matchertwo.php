@@ -1,52 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>cse499 Project</title>
-  <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php include 'inc/header.php'; ?>
+<?php 
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+$login = Session::get('login');
+  if (!$login) {
+    header("Location: login.php");
+  }
 
-</head>
-<body>
-<header id="Mainnavbar" class="sticky-top">
-  <div class="logo">
-    <a href="index.php"><img src="images/footer.png" class="rounded-circle" width="100"></a>
-  </div>
-  <nav class="activation">
-    <ul class="mainUl">
-      <li><a href="index.php">Home</a></li>
-      <li class="sub-menu"><a href="country.php">Country</a>
-        <ul>
-        	<li><a href="country_details.phpname=nai">candana</a></li>
-        	<li><a href="country_details.phpname=nai">candana</a></li>
-        </ul>
-      </li>
-      <li class="sub-menu"><a href="exam.php">exam</a>
-        <ul>
-          	<li><a href="country_details.phpname=nai">candana</a></li>
-        	<li><a href="country_details.phpname=nai">candana</a></li>
-        </ul>
-      </li>
-      <li ><a href="university.php">University</a> </li>
-      <li class="sub-menu"><a href="course.php">Course</a>
-        <ul>
-       		<li><a href="country_details.phpname=nai">candana</a></li>
-        	<li><a href="country_details.phpname=nai">candana</a></li>
-        </ul>
-      </li>
-      <li ><a href="forum.php">Login</a> </li>
-      <li ><a href="forum.php">SignUP</a> </li>
-      <li ><a href="articles.php">Articles</a> </li>
-      <li><a href="contact_us.php">Contact us</a></li>
-    </ul>
-  </nav>
-  <div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
-</header>
-
-
+?>
 
 <section class="container-fluid mt-2">
 	<div class="row">
@@ -54,18 +14,14 @@
 		<div class="col-md-6 p-5">
 			<h3 class="text-center p-2 text-light bg-success">Check Eligibility For Specific University</h3>
 			<form class="border p-3" method="post" action="result_university.php">
-				<div class="form-group row">
-				  <label for="inputPassword" class="col-sm-3 col-form-label"><b>Your CGPA</b></label>
-				  <div class="col-sm-9">
-				  	<input type="text" name="cgpa" class="form-control" placeholder="Enter number">
-				  </div>
-				</div>
+				
 			  <div class="form-group row">
 			    <label for="exampleFormControlSelect1" class="col-sm-3 col-form-label"><b>Choose University :</b> </label>
 			    <div class="col-sm-9">
 				    <select class="form-control" id="uni" name="university">
 						  <option>Select University</option>
-						  <option value="15">Cornell University</option>
+						  <option value="15">The University of British Columbia</option>
+              <option value="16">Cornell University</option>
 						  <option>University Of Chicago</option>
 						  <option>Princeton university</option>
 						</select>
@@ -84,7 +40,7 @@
 				</div>
 
 				<div class="form-group row">
-				  <label for="inputPassword" class="col-sm-3 col-form-label"><b>National</b></label>
+				  <label for="inputPassword" class="col-sm-3 col-form-label"><b>Nationality</b></label>
 				  <div class="col-sm-9">
 				    <input type="text" class="form-control" name="nationality" value="Bangladeshi" readonly="">
 				  </div>
@@ -148,7 +104,7 @@
          data:{txt:txt},
          success:function(data)
          {
-          $("#scorelist").append(data);
+          $("#scorelist").html(data);
          }
        });
 			

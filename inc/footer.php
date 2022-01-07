@@ -20,7 +20,7 @@
           <p class="text-muted">----------------------</p>
           <p class="text-muted">Nsu-1782</p>
           <p class="text-muted">+10 367 826 2567</p>
-          <p class="text-muted">contact@team.com</p>
+          <p class="text-muted">contact@auntoree.com</p>
           <div >
             <button class="btn top_btn"><i class="fa fa-facebook"></i></button>
             <button class="btn top_btn"><i class="fa fa-twitter"></i></button>
@@ -31,7 +31,7 @@
         </div>
       </div>
       <hr>
-      <h5 class="text-center text-light">Copyright ©2020 All rights reserved | Web Design And Devlopment is made by <span class="text-danger">Shrabon</span></h5>
+      <h5 class="text-center text-light">Copyright ©2020 All rights reserved | Web Design And Devlopment is made by <span class="text-danger">Nsuers</span></h5>
 </footer>
 
 <div id="fb-root"></div>

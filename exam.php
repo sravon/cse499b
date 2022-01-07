@@ -1,4 +1,12 @@
 <?php include 'inc/header.php'; ?>
+<?php 
+
+$login = Session::get('login');
+  if (!$login) {
+    header("Location: login.php");
+  }
+
+?>
 <section class="container-fluid bg-success lineHeight">
   <div class="container p-5">
     <h1 class="text-light pull-left">Study Abroad Exams</h1>
@@ -39,50 +47,6 @@ if ($allExam) {
     </div>
 <?php }} ?>
    
-  </div>
-</section>
-<section class="container-fluid mt-5 bg-light">
-  <div class="container">
-    <h1 class="p-3 text-center text-success">What Our Students Say</h1><hr>
-    <div class="row">
-      <div class="col-md-4">
-        <p class="text-design text-muted">Simple yet analytical approaches for problem-solving, explained by the faculty, was greatly helpful for solving difficult questions. The innovative teaching adopted by the faculty make the test much easier.</p>
-        <div class="row">
-          <div class="col-md-6">
-            <img src="images/bro.jpg" alt="" width="100" class="img-fluid mx-auto d-block rounded-circle" >
-          </div>
-          <div class="col-md-6">
-            <h5 class=""><b>mr rinko</b></h5>
-            <p class="text-design text-muted">Simple yet analyticalr.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <p class="text-design text-muted">Simple yet analytical approaches for problem-solving, explained by the faculty, was greatly helpful for solving difficult questions. The innovative teaching adopted by the faculty make the test much easier.</p>
-        <div class="row">
-          <div class="col-md-6">
-            <img src="images/bro.jpg" alt="" width="100" class="img-fluid mx-auto d-block rounded-circle" >
-          </div>
-          <div class="col-md-6">
-            <h5 class=""><b>mr rinko</b></h5>
-            <p class="text-design text-muted">Simple yet analyticalr.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <p class="text-design text-muted">Simple yet analytical approaches for problem-solving, explained by the faculty, was greatly helpful for solving difficult questions. The innovative teaching adopted by the faculty make the test much easier.</p>
-        <div class="row">
-          <div class="col-md-6">
-            <img src="images/bro.jpg" alt="" width="100" class="img-fluid mx-auto d-block rounded-circle" >
-          </div>
-          <div class="col-md-6">
-            <h5 class=""><b>mr rinko</b></h5>
-            <p class="text-design text-muted">Simple yet analyticalr.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-      
   </div>
 </section>
 <footer class="footer text-center text-light container-fluid bg-dark">

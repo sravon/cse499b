@@ -1,11 +1,13 @@
 
 <?php 
-   $filepath = realpath(dirname(__FILE__));
+  $filepath = realpath(dirname(__FILE__));
    include_once ($filepath.'/../helpers/Format.php');
-
- spl_autoload_register(function ($class) {
-     include 'classes/' . $class . '.php';
- });
+   include_once ($filepath.'/../lib/Session.php');
+   
+   Session::init();
+  spl_autoload_register(function ($class) {
+    include 'classes/' . $class . '.php';
+  });
   $cntry = new Country();
   $exam = new Exam();
   $forum = new Forum();
@@ -14,13 +16,10 @@
   $mem = new Member();
   $rev = new Review();
   $page = new Page();
+  $user = new User();
 
-//  ?>
-  <?php 
-//  if (isset($_GET['logout'])) {
-//    Session::destroy();
-//  }
   ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,18 +36,18 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>  
-<div id="donate" class="p-3" style="position: absolute;top: 50%;right: 0;width: 120px;z-index: 9999;background: #eee;border-radius: 5px;">
+<div id="donate" class="p-3" style="position: fixed;top: 50%;right: 0;width: 120px;z-index: 9999;background: #ccc;border-radius: 5px;">
     <h6 class="text-center text-danger">Donate 200Tk</h6>
     <a class="btn btn-primary p-2" href="checkout.php?price=200">Checkout</a>
 </div> 
 <header id="Mainnavbar" class="sticky-top">
   <div class="logo">
-    <a href="index.php"><img src="images/underline.jpg" class="rounded-circle" width="120"></a>
+    <a href="index.php"><img src="images/LOGO.png" class="rounded-circle" width="90"></a>
   </div>
   <nav class="activation">
     <ul class="mainUl">
       <li><a href="index.php">Home</a></li>
-      <li class="sub-menu"><a href="country.php">Country</a>
+      <li class="sub-menu"><a href="">Country</a>
         <ul>
         <?php 
             $allCountry = $cntry->allCountry();
@@ -60,7 +59,7 @@
         ?>
         </ul>
       </li>
-      <li class="sub-menu"><a href="exam.php">exam</a>
+      <li class="sub-menu"><a href="">Exam</a>
         <ul>
           <?php 
             $allExam = $exam->allExam();
@@ -88,6 +87,31 @@
       <li ><a href="forum.php">Forum</a> </li>
       <li ><a href="articles.php">Articles</a> </li>
       <li><a href="contact_us.php">Contact us</a></li>
+              <?php
+                if (isset($_GET['logout'])) {
+                  //$delid = $ct->delCustomerCart();
+                  Session::destroy();
+                }
+
+                $login = Session::get('login');
+                if ($login) {
+              ?>
+              
+                     <li class="nav-item middle_header">
+                         <div class="dropdown show d-flex p-1">
+                            <img src="images/32.jpg" width="50" class="rounded-circle">
+                            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <?php echo Session::get('cmrname'); ?>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <a class="dropdown-item" href="profile.php">Profile</a>
+                              <a class="dropdown-item" href="notification.php">Notification</a>
+                              <a class="dropdown-item" href="?logout">logout</a>
+                            </div>
+                          </div>
+                     </li>
+                  <?php } ?>
     </ul>
   </nav>
   <div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>

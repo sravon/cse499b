@@ -32,50 +32,7 @@
 <section class="container-fluid container mt-4">
   <div id="result"></div>
 </section>
-<section class="container-fluid mt-5">
-  <div class="container">
-    <h1 class="p-3 text-center text-success">Which students already went abroad </h1><hr>
-    <div class="row">
-      <div class="col-md-4">
-        <p class="text-design text-muted">Simple yet analytical approaches for problem-solving, explained by the faculty, was greatly helpful for solving difficult questions. The innovative teaching adopted by the faculty make the test much easier.</p>
-        <div class="row">
-          <div class="col-md-6">
-            <img src="images/bro.jpg" alt="" width="100" class="img-fluid mx-auto d-block rounded-circle" >
-          </div>
-          <div class="col-md-6">
-            <h5 class=""><b>mr rinko</b></h5>
-            <p class="text-design text-muted">Simple yet analyticalr.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <p class="text-design text-muted">Simple yet analytical approaches for problem-solving, explained by the faculty, was greatly helpful for solving difficult questions. The innovative teaching adopted by the faculty make the test much easier.</p>
-        <div class="row">
-          <div class="col-md-6">
-            <img src="images/bro.jpg" alt="" width="100" class="img-fluid mx-auto d-block rounded-circle" >
-          </div>
-          <div class="col-md-6">
-            <h5 class=""><b>mr rinko</b></h5>
-            <p class="text-design text-muted">Simple yet analyticalr.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <p class="text-design text-muted">Simple yet analytical approaches for problem-solving, explained by the faculty, was greatly helpful for solving difficult questions. The innovative teaching adopted by the faculty make the test much easier.</p>
-        <div class="row">
-          <div class="col-md-6">
-            <img src="images/bro.jpg" alt="" width="100" class="img-fluid mx-auto d-block rounded-circle" >
-          </div>
-          <div class="col-md-6">
-            <h5 class=""><b>mr rinko</b></h5>
-            <p class="text-design text-muted">Simple yet analyticalr.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-      
-  </div>
-</section>
+
  <?php include 'inc/footer.php'; ?>
 <script type="text/javascript">
   $(document).ready(function(){

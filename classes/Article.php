@@ -17,6 +17,11 @@ class Article
 		$fetchAll = $this->db->select($sql);
 		return $fetchAll;
 	}
+	function singleArticle($id){
+		$sql ="SELECT * FROM article WHERE art_id ='{$id}'";
+		$fetchAll = $this->db->select($sql);
+		return $fetchAll;
+	}
 	function insertValueArticle($data,$picture){
 		$title = $this->fm->validation($data['title']);
 		$title = mysqli_real_escape_string($this->db->link,$title);

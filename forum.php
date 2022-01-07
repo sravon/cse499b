@@ -1,4 +1,12 @@
 <?php include 'inc/header.php'; ?>
+<?php 
+
+$login = Session::get('login');
+  if (!$login) {
+    header("Location: login.php");
+  }
+
+?>
 <div class="container-fluid bg-secondary lineHeight">
   <div class="container p-5">
     <h1 class="text-center text-dark">FAQs - Frequently Asked Questions</h1>

@@ -13,7 +13,7 @@ class Exam
 		$this->fm = new Format();
 	}
 	function allExam(){
-		$sql ='SELECT * FROM exam';
+		$sql ='SELECT * FROM exam limit 2';
 		$fetchAll = $this->db->select($sql);
 		return $fetchAll;
 	}

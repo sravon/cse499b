@@ -18,7 +18,7 @@
 		}
 echo $output;
 	}else{
-		echo '<h1 class="text-danger p-5">No search found</h1>';
+		echo '<h1 class="text-danger p-5">Coming Soon</h1>';
 	}
 		
  

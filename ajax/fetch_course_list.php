@@ -10,10 +10,12 @@
 	$result = mysqli_query($connect, $sql);
 	$output ='';
 	if (mysqli_num_rows($result) > 0 ) {
+		$i = 0;
 		while ($row = mysqli_fetch_array($result)) {
+			$i++;
 			$output .='<div class="row border border-danger p-1">
     <div class="col-md-3">
-      <h5 class="uniPos">#3</h5>
+      <h5 class="uniPos">#'.$i;.'</h5>
       <div class="p-4">
         <img src="images/bro.jpg" width="150" alt="img">
       </div>

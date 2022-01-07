@@ -12,14 +12,7 @@ Session::init();
    spl_autoload_register(function ($class) {
      include '../classes/' . $class . '.php';
  });
-    // include '../classes/Country.php';
-    // include '../classes/Exam.php';
-    // include '../classes/Forum.php';
-    // include '../classes/Article.php';
-    // include '../classes/University.php';
-    // include '../classes/Member.php';
-    // include '../classes/Review.php';
-    // include '../classes/Page.php';
+    
     $cntry = new Country();
     $exam = new Exam();
     $forum = new Forum();

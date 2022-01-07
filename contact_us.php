@@ -1,4 +1,12 @@
 <?php include 'inc/header.php'; ?>
+<?php 
+
+$login = Session::get('login');
+  if (!$login) {
+    header("Location: login.php");
+  }
+
+?>
 <section class="container-fluid bg-secondary lineHeight" >
 	<div class="container">
 		<h2 class="text-center text-white p-5">Contact Us</h2>
@@ -82,8 +90,7 @@
                 <div class="col-md-12 bg-dark p-3">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7496723.66068468!2d85.84616609221882!3d23.44207584900966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30adaaed80e18ba7%3A0xf2d28e0c4e1fc6b!2sBangladesh!5e0!3m2!1sen!2sbd!4v1586696138398!5m2!1sen!2sbd" width="100%" height="300" frameborder="0" style="border-radius:30px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
-                <p class="h6 text-design p-2">Two Logan Square <br>Suite #820 <br>Philadelphia ,Pa 19103</p>
-                <p class="h6 text-design text-primary p-2">info@domain.com</p>
+                <p class="h6 text-design text-primary p-2">auntor@gmail.com</p>
 			</div>
 		</div>
 			
